@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://localhost:8080/#/ebook -->
+<html lang="en" style="font-size: 50px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动端适配 -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimun-scale=1.0.user-scalable=no">
+    <link rel="icon" href="http://localhost:8080/favicon.ico">
+
+    <link rel="stylesheet" href="./vue-reader-proj_files/daysOne.css">
+    <link rel="stylesheet" href="./vue-reader-proj_files/global.scss">
+
+    <title>vue-reader-proj</title>
+  <link href="http://localhost:8080/about.126b5633a48192614ce8.hot-update.js" rel="prefetch"><link href="./vue-reader-proj_files/about.js.下载" rel="prefetch"><link href="./vue-reader-proj_files/app.js.下载" rel="preload" as="script"><link href="./vue-reader-proj_files/chunk-vendors.js.下载" rel="preload" as="script"><style type="text/css">
+#app{
+  width:100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+</style><style type="text/css">@font-face {
+  font-family: 'icomoon';
+  src:  url(/fonts/icomoon.db4d6188.eot);
+  src:  url(/fonts/icomoon.db4d6188.eot#iefix) format('embedded-opentype'),
+    url(/fonts/icomoon.37f2ce3c.ttf) format('truetype'),
+    url(/fonts/icomoon.8bc1c999.woff) format('woff'),
+    url(/img/icomoon.6fecc7e2.svg#icomoon) format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-A:before {
+  content: "\e900";
+}
+.icon-add:before {
+  content: "\e901";
+}
+.icon-back:before {
+  content: "\e902";
+}
+.icon-book:before {
+  content: "\e903";
+}
+.icon-book2:before {
+  content: "\e904";
+}
+.icon-bookmark:before {
+  content: "\e905";
+}
+.icon-bright:before {
+  content: "\e906";
+}
+.icon-cart:before {
+  content: "\e907";
+}
+.icon-check:before {
+  content: "\e908";
+}
+.icon-clock:before {
+  content: "\e909";
+}
+.icon-close:before {
+  content: "\e90a";
+}
+.icon-close-circle-fill:before {
+  content: "\e90b";
+}
+.icon-cn:before {
+  content: "\e90c";
+}
+.icon-down:before {
+  content: "\e90d";
+}
+.icon-down2:before {
+  content: "\e90e";
+}
+.icon-download:before {
+  content: "\e90f";
+}
+.icon-download-remove:before {
+  content: "\e910";
+}
+.icon-en:before {
+  content: "\e911";
+}
+.icon-forward:before {
+  content: "\e912";
+}
+.icon-headphone:before {
+  content: "\e913";
+}
+.icon-menu:before {
+  content: "\e914";
+}
+.icon-more:before {
+  content: "\e915";
+}
+.icon-move:before {
+  content: "\e916";
+}
+.icon-person:before {
+  content: "\e917";
+}
+.icon-play_backward:before {
+  content: "\e918";
+}
+.icon-play_forward:before {
+  content: "\e919";
+}
+.icon-play_go:before {
+  content: "\e91a";
+}
+.icon-play_pause:before {
+  content: "\e91b";
+}
+.icon-private:before {
+  content: "\e91c";
+}
+.icon-private-see:before {
+  content: "\e91d";
+}
+.icon-progress:before {
+  content: "\e91e";
+}
+.icon-pull_down:before {
+  content: "\e91f";
+}
+.icon-search:before {
+  content: "\e920";
+}
+.icon-selected:before {
+  content: "\e921";
+}
+.icon-settings:before {
+  content: "\e922";
+}
+.icon-shake:before {
+  content: "\e923";
+}
+.icon-share:before {
+  content: "\e924";
+}
+.icon-shelf:before {
+  content: "\e925";
+}
+.icon-speak:before {
+  content: "\e926";
+}
+.icon-up:before {
+  content: "\e927";
+}
+</style><style type="text/css">@font-face {
+  font-family: 'Days One';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/fonts/daysOne.47de8eae.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style><style type="text/css">html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+html, body {
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}</style><style type="text/css">html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+html, body {
+  width: 100%;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  overflow: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}</style><script charset="utf-8" src="./vue-reader-proj_files/about.js.下载"></script></head>
+  <body>
+    <noscript>
+      <strong>We're sorry but vue-reader-proj doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <!-- <script src="http://localhost:8098"></script> -->
+    <div id="app"><div data-v-4b3e28b2=""> aaa <div data-v-594ecb70="" data-v-4b3e28b2="" class="ebook-reader">  </div></div></div>
+    <!-- built files will be auto injected -->
+  <script type="text/javascript" src="./vue-reader-proj_files/chunk-vendors.js.下载"></script><script type="text/javascript" src="./vue-reader-proj_files/app.js.下载"></script>
+
+</body></html>
