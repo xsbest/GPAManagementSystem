@@ -8,11 +8,14 @@
              width="34"
              height="33">
       </div>
-      <el-menu default-active="2"
-               class="el-menu-vertical-demo"
-               text-color="000"
+      <el-menu :default-active="activeTitle"
+               text-color="rgb(150 146 146)"
+               active-text-color="#000"
+               background-color="#f2f2f2"
                @open="handleOpen"
-               @close="handleClose">
+               @close="handleClose"
+               @select="titleHandle"
+               router>
         <el-submenu v-for="item in asideItems"
                     :key="item.index"
                     :index="item.index">
@@ -41,8 +44,8 @@
                width="20"
                height="17">
           <span>班级首页</span>
-
         </div>
+
         <div style="position:absolute;width:300px; right:0; bottom:10px">
           <span>欢迎进入综测管理系统！</span>
           <el-button style="color: rgba(99, 185, 190, 1)"
@@ -62,18 +65,12 @@
 <script>
 export default {
   mounted () {
-    // console.log(this.$route.path)
-    // switch (this.$route.path) {
-    //   case '/initAll': this.title = '初始化'; break
-    //   case '/projCreate': this.title = '项目生成'; break
-    //   case '/projJudge': this.title = '项目审核'; break
-    //   case '/rightManage': this.title = '权限管理'; break
-    // }
+    const path = this.$route.path.substring(1)
+    this.titleHandle(path)
   },
   computed: {
     activeTitle () {
-      // return this.$route.path.slice(1)
-      return 1
+      return this.$route.path.substring(1)
     }
   },
   data () {
@@ -94,9 +91,10 @@ export default {
         name: '成绩管理模块',
         index: 'gradeMangement',
         children: [
+
           {
             name: '学考成绩管理',
-            index: 'gradeManageMent'
+            index: 'gradeManage'
           },
           {
             name: '自测成绩管理',
@@ -104,7 +102,7 @@ export default {
           },
           {
             name: '综测成绩管理',
-            index: 'selfTestManageMent'
+            index: 'compreTestManageMent'
           }
         ]
       },
@@ -117,25 +115,26 @@ export default {
     }
   },
   methods: {
+
     logout () {
       this.$router.push('login')
     },
     handleOpen (index) {
-      // const path = '/' + index
-      // this.titleHandle(path)
-      console.log(index)
+
     },
     handleClose () {
 
     },
     titleHandle (path) {
-      console.log(path)
-      switch (path) {
-        case '/initAll': this.title = '用户初始化'; break
-        case '/projCreate': this.title = '项目生成'; break
-        case '/projJudge': this.title = '项目审核'; break
-        case '/rightManage': this.title = '权限管理'; break
-      }
+      this.asideItems.forEach(i => {
+        if (i.children) {
+          i.children.forEach(item => {
+            if (item.index === path) {
+              this.title = item.name
+            }
+          })
+        }
+      })
     }
 
   }

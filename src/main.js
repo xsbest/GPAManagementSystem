@@ -3,8 +3,10 @@ import App from './App.vue'
 import router from './router'
 import axios from 'axios'
 import qs from 'qs'
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
 Vue.prototype.qs = qs
-
 Vue.config.productionTip = false
 axios.defaults.baseURL = 'http://81.71.142.81:9000/'
 axios.interceptors.response.use(config => {

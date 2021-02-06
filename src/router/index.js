@@ -9,42 +9,30 @@ Vue.use(ElementUI)
 Vue.use(VueRouter)
 const routes = [{
     // 主页
-    path: '/',
-    name: 'first',
-    component: home,
-    redirect: '/home'
-  },
-  {
-    // 主页
-    path: '/home',
+    path: '*',
     name: 'home',
     component: home,
-    redirect: '/userInit',
+    redirect: 'gradeInit',
     children: [{
-        path: '/studentSelfTest',
-        name: 'studentSelfTest',
-        component: lazyLoading('studentSelfTest')
-      }, {
-        path: '/projCreate',
-        name: 'projCreate',
-        component: lazyLoading('projCreate')
+        path: 'gradeInit',
+        name: '学考成绩初始化',
+        component: lazyLoading('gradeInit')
       },
       {
-        path: '/projJudge',
-        name: 'projJudge',
-        component: lazyLoading('projJudge')
+        path: 'selfTestInit',
+        name: '自测成绩初始化',
+        component: lazyLoading('selfTestInit')
       },
       {
-        path: '/rightManage',
-        name: 'rightManage',
-        component: lazyLoading('rightManage')
+        path: 'gradeManage',
+        name: '学考成绩管理',
+        component: lazyLoading('createClass')
       },
       {
-        path: '/userInit',
-        name: 'userInit',
-        component: lazyLoading('userInit')
+        path: 'selfTestInit',
+        name: '自测成绩初始化',
+        component: lazyLoading('createClass')
       }
-
     ]
   },
   {
@@ -57,8 +45,7 @@ const routes = [{
     path: '/createClass',
     name: 'createClass',
     component: lazyLoading('createClass')
-  },
-  {
+  }, {
     path: '/register',
     name: 'register',
     component: lazyLoading('register')
