@@ -43,7 +43,18 @@
                        align="center"
                        label="日期">
       </el-table-column>
-
+      <el-table-column fixed="right"
+                       header-align="center"
+                       align="center"
+                       label="操作">
+        <template slot-scope="scope">
+          <el-button @click="handleClick(scope.row)"
+                     type="text"
+                     size="small">删除</el-button>
+          <el-button type="text"
+                     size="small">编辑</el-button>
+        </template>
+      </el-table-column>
     </el-table>
 
     <el-dialog :close-on-click-modal="false"
@@ -111,7 +122,7 @@ export default {
     },
     async submit () {
       console.log(this.formData)
-      const res = await this.$http.post('http://81.71.142.81:9000/zongce2/service/service_self/setInit', {
+      const res = await this.$http.post('http://81.71.142.81:8006/service_self/setInit/addInitByAdmin', {
         ...this.formData
       })
       console.log(res)
